@@ -1,4 +1,4 @@
-# IntervAI ✦
+# IntervAI
 
 > AI-powered interview question generator — built with Gemini, FastAPI, and vanilla HTML.
 
@@ -55,8 +55,8 @@ cd IntervAI
 
 ```bash
 python3 -m venv venv
-source venv/bin/activate       # Mac/Linux
-venv\Scripts\activate          # Windows
+source venv/bin/activate 
+venv\Scripts\activate
 ```
 
 ### 3. Install dependencies
@@ -170,12 +170,6 @@ Returns the health status of the API.
 - [ ] Export questions as PDF
 - [ ] Question history with localStorage
 - [ ] Candidate answer evaluator
-
----
-
-## License
-
-MIT — do whatever you want with it.
 
 ---
 
