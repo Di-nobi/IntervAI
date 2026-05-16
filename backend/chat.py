@@ -1,17 +1,21 @@
 from dotenv import load_dotenv
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import google.generativeai as genai
 import os
 import json
+from slowapi import Limiter
+from slowapi.util import get_remote_address
 
 load_dotenv()
 
 genai.configure(api_key=os.getenv('API_KEY'))
 model = genai.GenerativeModel("gemini-2.5-flash-lite")
 
+limiter = Limiter(key_func=get_remote_address)
 app = FastAPI()
+app.state.limiter = limiter
 
 app.add_middleware(
     CORSMiddleware,
@@ -46,6 +50,7 @@ def chatResponse(job_title: str) -> list[str]:
 
 
 @app.post("/generate")
-async def generate(body: JobRequest):
+@limiter.limit("10/minute")
+async def generate(request: Request, body: JobRequest):
     questions = chatResponse(body.jobTitle)
     return {"questions": questions}
