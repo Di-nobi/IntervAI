@@ -6,7 +6,7 @@
 
 ## What it does
 
-IntervAI takes a job title and instantly generates 3 thoughtful, role-specific interview questions using Google's Gemini AI. Questions vary by type — behavioural, situational, and role-specific knowledge — so you walk into every interview prepared.
+IntervAI takes a job title and instantly generates 3 thoughtful, role-specific interview questions using Google's Gemini AI. Questions vary by type behavioural, situational, and role-specific knowledge so you walk into every interview prepared.
 
 ---
 
@@ -146,7 +146,7 @@ Returns the health status of the API.
 2. Set the root directory to `frontend/`
 3. Update `BACKEND_URL` in `index.html` to your Railway URL:
    ```js
-   const BACKEND_URL = "https://your-app.up.railway.app";
+   const BACKEND_URL = "https://intervai-production.up.railway.app";
    ```
 4. Deploy — Vercel handles the rest.
 
@@ -159,17 +159,6 @@ Returns the health status of the API.
 | `API_KEY` | Your Google Gemini API key |
 
 > ⚠️ Never commit your `.env` file. It's already in `.gitignore`.
-
----
-
-## Roadmap
-
-- [ ] Follow-up question drilldown per question
-- [ ] Full interview kit — questions + ideal answers + red flags
-- [ ] Difficulty level toggle (Junior / Mid / Senior)
-- [ ] Export questions as PDF
-- [ ] Question history with localStorage
-- [ ] Candidate answer evaluator
 
 ---
 
